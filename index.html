@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Bangladesh</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-base-100 text-gray-800 font-sans  mx-auto">
+
+    <div class="navbar bg-white shadow sticky top-0 z-50 px-4 lg:px-8">
+    <div class="navbar-start">
+        <a class="btn bg-green-300 hover:bg-green-400">Blog</a>
+    </div>
+    <div class="flex items-center gap-2">
+        <img src="./assets/logo.png" alt="Logo" class="h-8 w-auto" />
+        <p class="text-lg font-semibold hidden sm:block">Donate_Bangladesh</p>
+    </div>
+    <div class="navbar-end gap-2">
+        <img src="./assets/coin.png" class="w-6 h-6" />
+        <p id="my-balance" class="font-semibold">5500</p>
+        <p>BDT</p>
+    </div>
+</div>
+
+    <!-- Toggle Buttons -->
+   <div class="text-center my-10 sticky top-[4rem] z-40 bg-white py-4">
+
+        <button id="donation-tab" class="btn bg-green-300">Donation</button>
+        <button id="history-tab" class="btn bg-gray-200">History</button>
+    </div>
+
+    <!-- Donation part -->
+    <div id="donation-section" class="grid gap-6 max-w-4xl mx-auto">
+        <!-- Card - 1 (Noakhali) -->
+        <div class="card lg:card-side bg-base-100 shadow-md rounded-xl overflow-hidden max-w-4xl mx-auto">
+            <!-- Image -->
+            <figure class="w-full lg:w-1/2">
+                <img src="./assets/noakhali.png" alt="Noakhali Flood" class="object-cover h-full w-full" />
+            </figure>
+
+            <!-- Card Body -->
+            <div class="card-body w-full lg:w-1/2">
+                <!-- Donation Info -->
+                <div class="flex items-center gap-2 bg-base-300 rounded-xl p-2 w-fit mb-3">
+                    <img src="./assets/coin.png" alt="coin" class="w-6 h-6">
+                    <p class="font-semibold text-base">
+                        <span id="noakhali-total" class="pr-1">45000</span> BDT
+                    </p>
+                </div>
+
+                <!-- Title -->
+                <h2 class="card-title text-lg md:text-xl text-bold">Donate for Flood at Noakhali, Bangladesh</h2>
+
+                <!-- Description -->
+                <p class="text-sm md:text-base text-justify">
+                    The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your
+                    donation will help provide essential supplies to those affected.
+                </p>
+
+                <!-- Input + Button -->
+                <div class="card-actions flex flex-col gap-2 mt-4">
+                    <input id="input-noakhali" type="number" placeholder="Enter Donation Amount"
+                        class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-primary" />
+                    <button class="btn bg-green-300 w-full donate-btn" data-target="noakhali">Donate Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card - 2 (Feni) -->
+        <div class="card lg:card-side bg-base-100 shadow-md rounded-xl overflow-hidden">
+            <figure class="w-full lg:w-1/2">
+                <img src="./assets/feni.png" alt="Feni Flood" class="object-cover h-full w-full" />
+            </figure>
+            <div class="card-body w-full lg:w-1/2">
+                <div class="flex items-center gap-2 bg-base-300 rounded-xl p-2 w-fit mb-3">
+                    <img src="./assets/coin.png" alt="coin" class="w-6 h-6">
+                    <p class="font-semibold text-base"><span id="feni-total" class="pr-1">0</span> BDT</p>
+                </div>
+                <h2 class="card-title text-lg md:text-xl">Donate for Flood Relief in Feni, Bangladesh</h2>
+                <p class="text-sm md:text-base text-justify">Feni is facing severe flood crises. Your support can make a
+                    real difference...</p>
+                <div class="card-actions flex flex-col gap-2 mt-4">
+                    <input id="input-feni" type="number" placeholder="Enter Donation Amount"
+                        class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-primary" />
+                    <button class="btn bg-green-300 w-full donate-btn" data-target="feni">Donate Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card - 3 (Quota Movement) -->
+        <div class="card lg:card-side bg-base-100 shadow-md rounded-xl overflow-hidden">
+            <figure class="w-full lg:w-1/2">
+                <img src="./assets/quota-protest.png" alt="Quota Movement Aid" class="object-cover h-full w-full" />
+            </figure>
+            <div class="card-body w-full lg:w-1/2">
+                <div class="flex items-center gap-2 bg-base-300 rounded-xl p-2 w-fit mb-3">
+                    <img src="./assets/coin.png" alt="coin" class="w-6 h-6">
+                    <p class="font-semibold text-base"><span id="quota-total" class="pr-1">0</span> BDT</p>
+                </div>
+                <h2 class="card-title text-lg md:text-xl">Aid for Injured in the Quota Movement</h2>
+                <p class="text-sm md:text-base text-justify">Support injured students and citizens affected during the
+                    quota
+                    reform movement...</p>
+                <div class="card-actions flex flex-col gap-2 mt-4">
+                    <input id="input-quota" type="number" placeholder="Enter Donation Amount"
+                        class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-primary" />
+                    <button class="btn bg-green-300 w-full donate-btn" data-target="quota">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Section -->
+    <div id="history-section" class="hidden ">
+        <div id="history-list" class="space-y-4 max-w-xl mx-auto ">
+            
+
+        </div>
+    </div>
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/history.js"></script>
+
+</body>
+
+</html>
